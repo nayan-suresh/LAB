@@ -1,0 +1,85 @@
+REVERSE OF A NUMBER
+temp = num % 10;
+rev = rev * 10 + temp;
+num /= 10;
+
+
+2. Digit Sum
+temp = num % 10;
+sum += temp;
+num /= 10;
+
+PALINDROME
+temp = num % 10;
+rev = rev * 10 + temp;
+num /= 10;
+if(original == rev)
+
+4. Armstrong Number
+temp = n % 10;
+sum += pow(temp, digits);
+n /= 10;
+if(sum == original)
+
+
+5,Reverse of a String
+temp = str[i];
+str[i] = str[j];
+str[j] = temp;
+
+
+Factorial
+fact = 1;
+for(i = 1; i <= num; i++)
+    fact *= i;
+
+Prime Check
+for(i = 2; i <= num/2; i++)
+    if(num % i == 0)
+        flag = 1;
+
+Fibonacci Series
+a = 0;
+b = 1;
+for(i = 0; i < n; i++) {
+    printf("%d ", a);
+    temp = a + b;
+    a = b;
+    b = temp;
+}
+
+armstrong full code
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, n, temp, digits = 0, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    n = num;
+
+    // Count number of digits
+    while(n != 0) {
+        digits++;
+        n /= 10;
+    }
+
+    n = num;
+
+    // Calculate sum of digits raised to the power of 'digits'
+    while(n != 0) {
+        temp = n % 10;
+        sum += pow(temp, digits);
+        n /= 10;
+    }
+
+    if(sum == num)
+        printf("%d is an Armstrong number.\n", num);
+    else
+        printf("%d is NOT an Armstrong number.\n", num);
+
+    return 0;
+}
+
